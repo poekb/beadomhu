@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+.menu.click{
+  @apply bg-transparent group-hover:bg-transparent transition-all ease-in-out;
+}
+.menu.click::after{
+  content: "";
+  transform: translateY(8px);
+  position: absolute;
+  top:-1rem;
+  left: -1rem;
+  height: 3px;
+  width: 26px;
+  @apply bg-neutral-400 group-hover:bg-neutral-300 transition-all ease-in-out -rotate-45;
+  margin: 1rem;
+}
+.menu.click::before{
+  content: "";
+  transform: translateY(-8px);
+
+  position: absolute;
+  top:-1rem;
+  left: -1rem;
+  height: 3px;
+  width: 26px;
+  @apply bg-neutral-400 group-hover:bg-neutral-300 transition-all ease-in-out rotate-45;
+  margin: 1rem;
+}
+
+.menu{
+  position: relative;
+  height: 3px;
+  width: 26px;
+  @apply bg-neutral-400 group-hover:bg-neutral-300 transition-all ease-in-out rounded-full;
+  margin: 1rem;
+}
+.menu::after{
+  content: "";
+  transform: translateY(8px);
+  position: absolute;
+  top:-1rem;
+  left: -1rem;
+  height: 3px;
+  width: 26px;
+  @apply bg-neutral-400 group-hover:bg-neutral-300 transition-all ease-in-out rounded-full;
+  margin: 1rem;
+}
+.menu::before{
+  content: "";
+  transform: translateY(-8px);
+  position: absolute;
+  top:-1rem;
+  left: -1rem;
+  height: 3px;
+  width: 26px;
+  @apply bg-neutral-400 group-hover:bg-neutral-300 transition-all ease-in-out rounded-full;
+  margin: 1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    border: 1px solid white;
+    -webkit-box-shadow: 0 0 0 40px rgb(100 100 100)  inset;
+    -webkit-text-fill-color: white;
+}
+.w-100-3{
+  width: calc(100% - 3rem);
+
+}
+.translate-x-130{
+  transform: translateX(-130%);
+}
+.w-100-1{
+  width: calc(100% - 1rem);
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-neutral-500 shadow-2xl;
+  border-radius: 100vh;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+
+  @apply bg-neutral-500;
+}
+
+.checkbox-wrapper .checkslider {
+  appearance: none;
+  @apply bg-neutral-500;
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 36px;
+  
+  position: relative;
+  
+  width: 62px;
+}
+
+.checkbox-wrapper .checkslider::before {
+  bottom: -6px;
+  content: "";
+  left: -6px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+}
+
+.checkbox-wrapper .checkslider,
+.checkbox-wrapper .checkslider::after {
+  transition: all 100ms ease-out;
+}
+
+::-webkit-calendar-picker-indicator {
+  transition: all;
+  filter: invert(0.6);
+}
+
+::-webkit-calendar-picker-indicator:hover {
+  transition: all;
+  filter: invert(0.8);
+}
+
+.checkbox-wrapper .checkslider::after {
+  @apply bg-neutral-800 ;
+  border-radius: 50%;
+  content: "";
+  height: 29px;
+  left: 4px;
+  position: absolute;
+  top: 4px;
+  width: 29px;
+}
+
+.checkbox-wrapper input[type=checkbox] {
+  cursor: default;
+}
+
+.checkbox-wrapper .checkslider:hover {
+  background-color: #c9cbcd;
+  transition-duration: 0s;
+}
+
+.checkbox-wrapper .checkslider:checked {
+  @apply bg-lime-500
+}
+
+.checkbox-wrapper .checkslider:checked::after {
+  background-color: #fff;
+  left: 30px;
+}
+
+.checkbox-wrapper :focus:not(.focus-visible) {
+  outline: 0;
+}
+
+.checkbox-wrapper .checkslider:checked:hover {
+  @apply bg-lime-600
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  border-top: 20px solid;
+
+  width: 200px;
+  height: 200px;
+  border: 20px solid #383636;
+  @apply border-t-neutral-400;
+
+  border-radius: 50%;
+  animation: spinner 0.7s linear  infinite;
+}
+
+.small-spinner {
+
+  aspect-ratio: 1/1;
+  border: 2px solid;
+  border-top: transparent;
+  border-right: transparent;
+
+  border-radius: 50%;
+  animation: spinner 0.7s linear  infinite;
+}

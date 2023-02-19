@@ -1,0 +1,82 @@
+
+
+.App-header {
+  @apply bg-slate-700;
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+.fade{
+  position:relative;
+  transition: all 100ms ease-in-out;
+  /* … */
+}
+.fade:after {
+  content:"";
+  transition: all 100ms ease-in-out;
+  position:absolute;
+  bottom: 0%;
+  left:0;
+  height:40.01%;
+  width:100%;
+  
+  background: linear-gradient(rgba(0,0,0,0) 50%,rgba(64,64,64,1));
+}
+
+.nfade{
+  position:relative;
+  transition: all 100ms ease-in-out;
+  /* … */
+}
+.nfade:after {
+  content:"";
+  transition: all 100ms ease-in-out;
+  position:absolute;
+  bottom: 0%;
+  left:0;
+  height:0%;
+  width:100%;
+  
+  background: linear-gradient(rgba(0,0,0,0) 50%,rgba(64,64,64,1));
+}
+.fade2{
+  position:relative;
+  /* … */
+}
+.fade2:after {
+  content:"";
+  
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  
+  background: linear-gradient(rgba(0,0,0,0) 65%,rgb(82, 82, 82) 95%);
+}
+
+
+
+.minw50{
+  min-width: 330px;
+}
+.maxw90{
+  max-width: 90vw;
+}
+.TransparentBackground{
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Login {
+  height: 50vmin;
+  border-radius: 5%;
+  @apply bg-slate-900 w-1/2
+}
