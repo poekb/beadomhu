@@ -22,15 +22,15 @@ class Source extends React.Component{
         return(<>{this.props.isSelected?
         <div className="w-[99%] bg-neutral-800 rounded-3xl m-auto mt-3 p-1 pt-2">
             <div className="flex flex-row justify-end flex-wrap text-neutral-300 font-bold w-full">
-             <input className=" grow pl-2 ml-2 text-start text-ellipsis whitespace-nowrap overflow-hidden mr-2 bg-inherit outline-none bg-neutral-800 hover:bg-neutral-700 transition-all rounded-3xl p-1" value={this.state.source.title} onChange={(e)=>{this.state.source.title=e.target.value; this.forceUpdate()}}/>
-             <input className=" flex-none fill-neutral-300 p-1 pr-2 pl-2 mr-2 rounded-3xl text-neutral-300 bg-neutral-800 outline-none hover:bg-neutral-700 transition-all"
+             <input maxLength="255" className=" grow pl-2 ml-2 text-start text-ellipsis whitespace-nowrap overflow-hidden mr-2 bg-inherit outline-none bg-neutral-800 hover:bg-neutral-700 transition-all rounded-3xl p-1" value={this.state.source.title} onChange={(e)=>{this.state.source.title=e.target.value; this.forceUpdate()}}/>
+             <input maxLength="255" className=" flex-none fill-neutral-300 p-1 pr-2 pl-2 mr-2 rounded-3xl text-neutral-300 bg-neutral-800 outline-none hover:bg-neutral-700 transition-all"
              type="datetime-local" id="start" name="trip-start" 
              step={1}
              value={this.state.source.viewDate} onChange={(e)=>{console.log(this.state.source.viewDate);this.state.source.viewDate=e.target.value; this.forceUpdate();}}/>
 
             </div>
             <div className="flex mb-1 pl-2 pr-2 items-center justify-end mt-2">
-                <input className=" flex-grow p-1 pl-2 pr-2 outline-none bg-inherit overflow-hidden text-ellipsis whitespace-nowrap text-start bg-neutral-800 hover:bg-neutral-700 transition-all rounded-3xl" value={this.state.source.url} onChange={(e)=>{this.state.source.url=decodeURIComponent(e.target.value); this.forceUpdate()}}/>
+                <input maxLength="255" className=" flex-grow p-1 pl-2 pr-2 outline-none bg-inherit overflow-hidden text-ellipsis whitespace-nowrap text-start bg-neutral-800 hover:bg-neutral-700 transition-all rounded-3xl" value={this.state.source.url} onChange={(e)=>{this.state.source.url=decodeURIComponent(e.target.value); this.forceUpdate()}}/>
                 <button type="submit" 
                             className="  text-neutral-300 p-1 ml-2 shadow-2xl text-center text-xl font-bold rounded-lg bg-blue-500 transition hover:bg-blue-600 flex flex-row justify-center items-center"
                             onClick={()=>{
