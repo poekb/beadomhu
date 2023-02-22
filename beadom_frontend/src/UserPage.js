@@ -137,6 +137,7 @@ class UserPage extends React.Component{
             }
         }
         this.editPaper(false)
+        this.updateOrder();
     }
 
     newPaper(paper) {
