@@ -41,7 +41,6 @@ const getChangingToken = (callback,mapping,callback2,preset) => {
     mode: 'cors'
   };
   fetch(SERVERURL+"/request/get/changingtoken", options).then(result => {result.text().then(txt =>{
-    //console.log(AESfunction.decryptServerMessage(txt,sessionToken));
     sessionChangingToken=AESfunction.decryptServerMessage(txt,sessionToken);
     callback(mapping,callback2,preset);
   })})
@@ -73,8 +72,6 @@ const handleSessionInfo = (sessionInfo,callbackIfFailed) => {
       return;
     }
     stompClient.subscribe("/user/"+sessionID+"/timeout",pingServer,{id:"timeout"})
-    //stompClient.subscribe("/user/"+sessionID+"/paperlistener",paperListener,{id:"paperlistener"})
-
 
     application.logged(true)
     application.onMessage({on:false})

@@ -17,6 +17,19 @@ select,
 a {
     -webkit-tap-highlight-color: transparent;
 }
+
+video:-webkit-full-screen {
+  border-radius: 0;
+}
+
+video:-moz-full-screen {
+  border-radius: 0;
+}
+
+video:fullscreen {
+  border-radius: 0;
+}
+
 .menu.click{
   @apply bg-transparent group-hover:bg-transparent transition-all ease-in-out;
 }
