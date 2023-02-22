@@ -5,6 +5,7 @@ import ConfirmEmail from './ConfirmEmail';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Docs from './Docs';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -24,7 +25,8 @@ root.render(
     <Routes>
       <Route path="/regist" element={<ConfirmEmail />}/>
 
-      <Route path="/" element={<App />}/>
+      <Route path="/docs" element={<Docs />}/>
+      <Route path="/doks" element={<Docs />}/>
 
       
       <Route path="*" element={<App />}/>
